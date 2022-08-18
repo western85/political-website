@@ -15,10 +15,6 @@ const helmet = require("helmet");
 const MongoStore = require("connect-mongo");
 
 const dbUrl = process.env.DB_URL;
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname + "/public"));
-
-const secret = process.env.SECRET || "nosecret";
 
 app.use(
   session({
@@ -27,10 +23,15 @@ app.use(
     resave: false,
     store: MongoStore.create({
       mongoUrl: dbUrl,
-      touchAfter: 24 * 60 * 60,
+      touchAfter: 24 * 3600,
     }),
   })
 );
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + "/public"));
+
+const secret = process.env.SECRET || "nosecret";
 
 const sessionConfig = {
   secret,
@@ -73,6 +74,8 @@ app.get("/info", (req, res) => {
   console.log("req for info received");
   res.render("pages/info");
 });
+
+app.post("");
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
