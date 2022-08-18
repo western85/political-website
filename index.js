@@ -15,6 +15,10 @@ const helmet = require("helmet");
 const MongoStore = require("connect-mongo");
 
 const dbUrl = process.env.DB_URL;
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + "/public"));
+
+const secret = process.env.SECRET || "nosecret";
 
 app.use(
   session({
@@ -27,11 +31,6 @@ app.use(
     }),
   })
 );
-
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname + "/public"));
-
-const secret = process.env.SECRET || "nosecret";
 
 const sessionConfig = {
   secret,
