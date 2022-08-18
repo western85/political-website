@@ -4,31 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
     <link rel="stylesheet" href="/stylesheets/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
     <title>Home</title>
   </head>
 
   <body>
-    <header class="sticky">
+  
+    <nav class="sticky">
       <div>
         <ul>
           <li><a href="/">HOME</a></li>
           <li><a href="/info">Info</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/join">Join</a></li>
         </ul>
       </div>
-    </header>
-    <main>
+    </nav>
       <div class="container">
-        <h1>
-          Vote for Shadow Corp
-        </h1>
+        <h2>
+          SUPPORT SHADOW CORPS
+        </h2>
+        <div>
+          <%- include('./partials/flash') %> 
+        </div>
         <img
           src="https://images.unsplash.com/photo-1529946825183-536c6317f60e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1063&q=80"
           alt=""
         />
+        <h2 ID='VFC'>CHOOSE INDIFFERENCE</h2> 
       </div>
-
+      <main>
       <div class="grid-container">
         <div class="grid-child row">
           <div class="column">
@@ -65,7 +75,7 @@
     <div class="footer-block">
       <div>
         <h1>Support the oppression</h1>
-        <button class="btn-submit">Join Us</button>
+        <button class="btn-submit" onclick="window.location.href='/join'">Join Us</button>
       </div>
     </div>
   </body>

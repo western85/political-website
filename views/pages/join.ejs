@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link rel="stylesheet" href="stylesheets/join.css" />
+  </head>
+  <body>
+    <div>
+      <h1 id="title">Join Us</h1>
+    </div>
+    <div class="linkbar">
+      <a href="/">Return Home</a>
+      <a href="/info">Info</a>
+    </div>
+    <div class="container">
+      <form action="join" method="POST">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" />
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" /><br />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+        <label for="party">Political Party</label>
+        <select name="party" id="party">
+          <option value="default">Choose One</option>
+          <option value="scum">Scum</option>
+          <option value="villainy">Villainy</option>
+        </select>
+        <label for="fanaticism">Fanaticsicm</label>
+        <select name="fanaticism" id="fanaticism">
+          <option value="default">Choose One</option>
+          <option value="indifferent">Indifferent</option>
+          <option value="offended">Offended</option>
+          <option value="aggressive">Aggressive</option>
+          <option value="radicalized">Radicalized</option>
+        </select>
+        <br />
+        <button id="submit">Commit</button>
+      </form>
+    </div>
+  </body>
+</html>
